@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rivet — WhatsApp automation platform</title>
+
+    <!-- SEO (keep it minimal + not indexed) -->
+    <meta
+      name="description"
+      content="Rivet provides tools for building and operating WhatsApp automations using the WhatsApp Cloud API."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rivet — WhatsApp automation platform" />
+    <meta
+      property="og:description"
+      content="Rivet provides tools for building and operating WhatsApp automations using the WhatsApp Cloud API."
+    />
+    <meta property="og:image" content="./assets/og-rivet.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/rivet-favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/rivet-favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/rivet-apple-touch-180.png" />
+    <meta name="theme-color" content="#0B0F14" />
+
+    <!-- Tailwind CDN (fine for this mini-site) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              rivet: {
+                charcoal: "#0B0F14",
+                graphite: "#121A24",
+                gunmetal: "#1F2A37",
+                steel: "#8A94A6",
+                alloy: "#E6EAF0",
+                blue: "#2D6BFF",
+                glow: "#6FA3FF",
+                deep: "#1E49B6",
+                ok: "#2ECC71",
+                warn: "#FFB020",
+                bad: "#FF3B30",
+              },
+            },
+            boxShadow: {
+              panel: "0 10px 30px rgba(0,0,0,0.35)",
+              glow: "0 0 0 6px rgba(111,163,255,0.18)",
+            },
+            fontFamily: {
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Arial", "sans-serif"],
+              display: ["Sora", "Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+              mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .grid-bg {
+        background-image: linear-gradient(to right, rgba(138, 148, 166, 0.10) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(138, 148, 166, 0.08) 1px, transparent 1px);
+        background-size: 48px 48px;
+        background-position: center;
+      }
+      .noise {
+        background-image: radial-gradient(rgba(230, 234, 240, 0.05) 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+      .vignette {
+        box-shadow: inset 0 0 160px rgba(0, 0, 0, 0.65);
+      }
+    </style>
+  </head>
+
+  <body class="bg-rivet-charcoal text-rivet-alloy antialiased font-sans">
+    <!-- Top bar -->
+    <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-rivet-charcoal/70 border-b border-white/5">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Brand -->
+          <a href="/" class="group flex items-center gap-3">
+            <div
+              class="relative h-9 w-9 rounded-xl bg-rivet-graphite border border-white/10 ring-1 ring-inset ring-white/10
+                     shadow-panel grid place-items-center overflow-hidden transition duration-200
+                     group-hover:border-white/20 group-hover:ring-rivet-blue/40 group-hover:shadow-glow group-hover:-translate-y-[1px]"
+            >
+              <span
+                class="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-rivet-blue/35 transition duration-200
+                       group-hover:bg-rivet-blue group-hover:shadow-[0_0_0_6px_rgba(45,107,255,0.18)]"
+                aria-hidden="true"
+              ></span>
+
+              <img src="./assets/rivet-icon.png" alt="Rivet" class="h-7 w-7 object-contain" draggable="false" />
+            </div>
+
+            <div class="leading-tight">
+              <div class="font-semibold tracking-tight font-display">Rivet</div>
+              <div class="text-xs text-rivet-steel">Rivet Software</div>
+            </div>
+          </a>
+
+          <!-- Nav (compliance pages only) -->
+          <nav class="hidden md:flex items-center gap-6 text-sm text-rivet-steel">
+            <a class="hover:text-rivet-alloy transition" href="/privacy.html">Privacy</a>
+            <a class="hover:text-rivet-alloy transition" href="/terms.html">Terms</a>
+            <a class="hover:text-rivet-alloy transition" href="/contact.html">Contact</a>
+          </nav>
+
+          <!-- CTA -->
+          <div class="flex items-center gap-3">
+            <a
+              href="/contact.html"
+              class="inline-flex items-center justify-center rounded-xl bg-rivet-blue px-4 py-2 text-sm font-semibold text-white hover:bg-rivet-deep transition focus:outline-none focus:ring-2 focus:ring-rivet-glow"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 grid-bg opacity-20"></div>
+      <div class="absolute inset-0 noise opacity-15"></div>
+      <div class="absolute inset-0 vignette pointer-events-none"></div>
+      <div class="absolute inset-x-0 top-0 h-px bg-white/10 pointer-events-none"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-rivet-steel">
+            <span class="h-2 w-2 rounded-full bg-rivet-ok"></span>
+            WhatsApp Cloud API • Webhooks • Operational controls
+          </div>
+
+          <h1 class="mt-6 text-4xl sm:text-5xl font-semibold tracking-tight text-rivet-alloy font-display">
+            Rivet: WhatsApp automation infrastructure for agencies.
+          </h1>
+
+          <p class="mt-4 text-lg text-rivet-steel">
+            This site exists for verification and policy references. Rivet provides tools for building and operating
+            WhatsApp automations, including event ingestion (webhooks), routing, and observability.
+          </p>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-rivet-graphite/60 p-5">
+              <div class="text-sm font-semibold text-rivet-alloy">What Rivet does</div>
+              <ul class="mt-3 space-y-2 text-sm text-rivet-steel">
+                <li>Receive WhatsApp events via webhooks</li>
+                <li>Execute bot logic and reply via Cloud API</li>
+                <li>Provide auditability and operational controls</li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-rivet-graphite/60 p-5">
+              <div class="text-sm font-semibold text-rivet-alloy">Policy links</div>
+              <div class="mt-3 space-y-2 text-sm">
+                <a class="text-rivet-glow hover:text-rivet-alloy transition" href="/privacy.html">Privacy Policy</a><br />
+                <a class="text-rivet-glow hover:text-rivet-alloy transition" href="/terms.html">Terms</a><br />
+                <a class="text-rivet-glow hover:text-rivet-alloy transition" href="/contact.html">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 rounded-2xl border border-white/10 bg-rivet-graphite/60 p-5">
+            <div class="text-sm font-semibold text-rivet-alloy">Contact</div>
+            <p class="mt-2 text-sm text-rivet-steel">
+              Email:
+              <a class="text-rivet-glow hover:text-rivet-alloy transition" href="mailto:rivetsoftware.sa@gmail.com">
+                rivetsoftware.sa@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <p class="mt-6 text-xs text-rivet-steel">
+            © <span id="year"></span> Rivet Software. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="text-sm text-rivet-steel">
+            © <span id="year2"></span> Rivet Software. All rights reserved.
+          </div>
+          <div class="flex gap-4 text-sm text-rivet-steel">
+            <a class="hover:text-rivet-alloy transition" href="/privacy.html">Privacy</a>
+            <a class="hover:text-rivet-alloy transition" href="/terms.html">Terms</a>
+            <a class="hover:text-rivet-alloy transition" href="/contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const y = new Date().getFullYear();
+      document.getElementById("year").textContent = y;
+      document.getElementById("year2").textContent = y;
+    </script>
+  </body>
+</html>
